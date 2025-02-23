@@ -29,7 +29,7 @@ public class ComputersStoreTest {
 
         Computer pc = new Computer("Apple", 16, "M1", "MacOS", 2500);
         store.addComputer(pc);
-        store.deleteComputer("Apple"); 
+        store.deleteComputer(pc); 
 
         List<Computer> computers = store.listComputers();
         assertThat(computers, is(empty()));

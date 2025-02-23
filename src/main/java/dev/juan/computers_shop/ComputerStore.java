@@ -19,6 +19,10 @@ public class ComputerStore {
        inventory.addComputer(computer);
     }
 
+    public void deleteComputer(Computer computer){
+        inventory.deleteComputer(computer);
+    }
+
     public List<Computer> listComputers() {
         return inventory.listed();
     }
