@@ -13,7 +13,12 @@ public class ComputersStoreTest {
         ComputersInventory inventory = new ComputersInventoryImpl();
         ComputerStore store = new ComputerStore("Tech Store", "John", "1234", inventory);
 
-        assertThat(store, is(notNullValue()));
+        Computer pc = new Computer("Asus", 16, "Intel i9", "Windows", 2000);
+        store.addComputer(pc);
+
+        List<Computer> computers = store.listComputers();
+        assertThat(computers, hasSize(1)); 
+        assertThat(computers, hasItem(pc));
         
     }
 }
