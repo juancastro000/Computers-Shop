@@ -35,19 +35,17 @@ public class ComputersInventoryTest {
     }
 
     @Test
-    void testFindComputerByBrand(){
-        ComputersInventory inventory = new ComputersInventoryImpl();
-        Computer hp = new Computer("HP", 8, "AMD", "Linux", 1000);
-        Computer dell = new Computer("Dell", 16, "Intel", "Windows", 1500);
+void testFindComputerByBrand() {
+    ComputersInventory inventory = new ComputersInventoryImpl();
+    Computer hp = new Computer("HP", 8, "AMD", "Linux", 1000);
+    Computer dell = new Computer("Dell", 16, "Intel", "Windows", 1500);
 
-        inventory.addComputer(dell);
-        inventory.addComputer(hp);
-        List<Computer> found = inventory.findByBrand("HP");
+    inventory.addComputer(dell);
+    inventory.addComputer(hp);
+    Computer found = inventory.findByBrand("HP");
 
-        assertThat(found, hasSize(1));
-        assertThat(found, hasItem(hp));
-        assertThat(found, not(hasItem(dell)));
-
-    }
+    assertThat(found, is(notNullValue()));
+    assertThat(found, equalTo(hp));
+}
 
 }

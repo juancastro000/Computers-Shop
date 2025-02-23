@@ -23,6 +23,10 @@ public class ComputerStore {
         inventory.deleteComputer(computer);
     }
 
+    public Computer searchComputer(String brand){
+        return inventory.findByBrand(brand);
+    }
+
     public List<Computer> listComputers() {
         return inventory.listed();
     }
