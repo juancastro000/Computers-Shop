@@ -1,0 +1,46 @@
+@startuml computers-shop
+
+class ComputersStore {
+    - String name
+    - String owner
+    - String id
+    - ComputerRepository repository
+    + addComputer(c: Computer)
+    + deleteComputer(brand: String)
+    + searchComputer(brand: String): Computer
+    + listComputers(): List<Computer>
+}
+
+interface ComputersInventory {
+    + add(c: Computer)
+    + delete(brand: String)
+    + search(brand: String): Computer
+    + list(): List<Computer>
+}
+
+class ComputersInventoryImpl {
+    - List<Computer> computers
+    + add(c: Computer)
+    + delete(brand: String)
+    + search(brand: String): Computer
+    + list(): List<Computer>
+}
+
+class Computer {
+    - String brand
+    - int ram
+    - String processor
+    - String os
+    - double price
+    + getBrand(): String
+    + getRam(): int
+    + getProcessor(): String
+    + getOs(): String
+    + getPrice(): double
+}
+
+ComputersStore --> ComputersInventory
+ComputersInventory <|.. ComputersInventoryImpl
+ComputersInventoryImpl --> Computer
+
+@enduml
