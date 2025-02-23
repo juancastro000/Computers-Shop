@@ -34,6 +34,19 @@ public class ComputersStoreTest {
         List<Computer> computers = store.listComputers();
         assertThat(computers, is(empty()));
     }
+
+    @Test
+    void testSearchComputerInStore() {
+        ComputersInventory repository = new ComputersInventoryImpl();
+        ComputerStore store = new ComputerStore("Tech Store", "John", "1234", repository);
+
+        Computer pc = new Computer("Acer", 8, "Intel i3", "Windows", 800);
+        store.addComputer(pc);
+
+        Computer found = store.searchComputer("Acer"); 
+        assertThat(found, is(notNullValue()));      
+        assertThat(found.getBrand(), is("Acer"));   
+    }
 }
 
 
