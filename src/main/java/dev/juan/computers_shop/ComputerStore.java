@@ -15,5 +15,11 @@ public class ComputerStore {
         this.id = id;
         this.inventory = inventory;
     }
- 
+    public void addComputer(Computer computer) {
+       inventory.addComputer(computer);
+    }
+
+    public List<Computer> listComputers() {
+        return inventory.listed();
+    }
  }
