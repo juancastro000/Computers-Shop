@@ -13,6 +13,11 @@ public class ComputersInventoryImpl implements ComputersInventory{
     }
 
     @Override
+    public void deleteComputer(Computer computer){
+        inventory.remove(computer);
+    }
+
+    @Override
     public List<Computer> listed(){
         return new ArrayList<>(inventory);
     }
