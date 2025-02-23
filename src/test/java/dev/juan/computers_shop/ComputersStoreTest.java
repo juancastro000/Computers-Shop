@@ -21,6 +21,19 @@ public class ComputersStoreTest {
         assertThat(computers, hasItem(pc));
         
     }
+
+    @Test
+    void testDeleteComputerFromStore() {
+        ComputersInventory repository = new ComputersInventoryImpl();
+        ComputerStore store = new ComputerStore("Tech Store", "John", "1234", repository);
+
+        Computer pc = new Computer("Apple", 16, "M1", "MacOS", 2500);
+        store.addComputer(pc);
+        store.deleteComputer("Apple"); 
+
+        List<Computer> computers = store.listComputers();
+        assertThat(computers, is(empty()));
+    }
 }
 
 
