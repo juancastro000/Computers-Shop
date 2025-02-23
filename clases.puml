@@ -1,0 +1,46 @@
+@startuml computers-shop
+
+class TiendaComputadores {
+    - String nombre
+    - String propietario
+    - String idTributario
+    - RepositorioComputadores repositorio
+    + agregarComputador(c: Computador)
+    + eliminarComputador(marca: String)
+    + buscarComputador(marca: String): Computador
+    + listarComputadores(): List<Computador>
+}
+
+interface RepositorioComputadores {
+    + agregar(c: Computador)
+    + eliminar(marca: String)
+    + buscar(marca: String): Computador
+    + listar(): List<Computador>
+}
+
+class RepositorioComputadoresMemoria {
+    - List<Computador> computadoras
+    + agregar(c: Computador)
+    + eliminar(marca: String)
+    + buscar(marca: String): Computador
+    + listar(): List<Computador>
+}
+
+class Computador {
+    - String marca
+    - int memoria
+    - String procesador
+    - String sistemaOperativo
+    - double precio
+    + getMarca(): String
+    + getMemoria(): int
+    + getProcesador(): String
+    + getSistemaOperativo(): String
+    + getPrecio(): double
+}
+
+TiendaComputadores --> RepositorioComputadores
+RepositorioComputadores <|.. RepositorioComputadoresMemoria
+RepositorioComputadoresMemoria --> Computador
+
+@enduml

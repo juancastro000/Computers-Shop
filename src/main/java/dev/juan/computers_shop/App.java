@@ -1,4 +1,4 @@
-package dev.juan.template_java;
+package dev.juan.computers_shop;
 public final class App {
     private App() {}
 
