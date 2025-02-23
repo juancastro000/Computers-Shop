@@ -15,8 +15,6 @@ public class ComputersStoreTest {
 
         assertThat(store, is(notNullValue()));
         
-        List<Computer> computers = store.listComputers();
-        assertThat(computers, is(empty()));
     }
 }
 

@@ -1,5 +1,18 @@
 package dev.juan.computers_shop;
 
-public class ComputerStore {
+import java.util.ArrayList;
+import java.util.List;
 
-}
+public class ComputerStore {
+    private String name;
+    private String owner;
+    private String id;
+    private ComputersInventory inventory;
+
+    public ComputerStore(String name, String owner, String id, ComputersInventory inventory) {
+        this.name = name;
+        this.owner = owner;
+        this.id = id;
+        this.inventory = inventory;
+    }
+ }
