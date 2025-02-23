@@ -2,6 +2,7 @@ package dev.juan.computers_shop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ComputersInventoryImpl implements ComputersInventory{
 
@@ -20,6 +21,13 @@ public class ComputersInventoryImpl implements ComputersInventory{
     @Override
     public List<Computer> listed(){
         return new ArrayList<>(inventory);
+    }
+
+    @Override
+    public List<Computer> findByBrand(String brand){
+        return inventory.stream()
+                        .filter(computer -> computer.getBrand().equalsIgnoreCase(brand))
+                        .collect(Collectors.toList());
     }
 
 }

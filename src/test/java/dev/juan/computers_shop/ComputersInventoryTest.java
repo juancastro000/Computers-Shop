@@ -42,7 +42,7 @@ public class ComputersInventoryTest {
 
         inventory.addComputer(dell);
         inventory.addComputer(hp);
-        List<Computer> found = inventory.testFindComputerByBrand("HP");
+        List<Computer> found = inventory.findByBrand("HP");
 
         assertThat(found, hasSize(1));
         assertThat(found, hasItem(hp));
