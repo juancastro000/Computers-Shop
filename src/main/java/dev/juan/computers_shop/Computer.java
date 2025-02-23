@@ -15,5 +15,25 @@ public class Computer {
         this.operatingSystem = operatingSystem;
         this.price = price;
     }
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public String getCpu() {
+        return cpu;
+    }
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
 
 }
